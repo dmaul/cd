@@ -1,0 +1,6 @@
+
+# use the line you need or want
+
+gcc -Wall -shared -I/System/Library/Frameworks/JavaVM.framework/Headers TestJni.c -o libTestJni.dylib -fPIC
+
+gcc -std=c89 -Wpedantic -shared -I/System/Library/Frameworks/JavaVM.framework/Headers -fPIC TestJni.c -o libTestJni.dylib
