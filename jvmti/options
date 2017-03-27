@@ -1,0 +1,2 @@
+
+gcc -Wall -shared -I/System/Library/Frameworks/JavaVM.framework/Headers TestJni.c -o libTestJni.dylib -fPIC
