@@ -11,10 +11,10 @@ callbackMethodEntry(jvmtiEnv *jvmti_env,
             jthread thread,
             jmethodID method)
 {
-  printf(" MethodEntry - Inside this method . \n");
   jthread* thread_ptr;
-  error = (*jvmti_env)->GetCurrentThread(jvmti_env, &thread_ptr);
   jvmtiThreadInfo info_ptr;
+  printf(" MethodEntry - Inside this method . \n");
+  error = (*jvmti_env)->GetCurrentThread(jvmti_env, &thread_ptr);
   
   if (error == JVMTI_ERROR_NONE) {
     printf(" MethodEntry - No error getting thread. \n");
@@ -28,8 +28,9 @@ callbackMethodEntry(jvmtiEnv *jvmti_env,
 JNIEXPORT jint JNICALL 
 Agent_OnLoad(JavaVM *vm, char *options, void *reserved)
 {  
-  printf(" executing Agent_OnLoad \n");
+  jvmtiEventCallbacks jvmtiEventCallbacks_;
   jint retGetEnv = (*vm)->GetEnv(vm, &jvmti, JVMTI_VERSION_1_1);
+  printf(" executing Agent_OnLoad \n");
   printf("(*vm)->GetEnv value returned is: %d \n", retGetEnv);
   
   error = (*jvmti)->GetPotentialCapabilities(jvmti, &capa);
@@ -54,7 +55,6 @@ Agent_OnLoad(JavaVM *vm, char *options, void *reserved)
     }
   }
   
-  jvmtiEventCallbacks jvmtiEventCallbacks_;
   (void)memset(&jvmtiEventCallbacks_, 0, sizeof(jvmtiEventCallbacks));
   jvmtiEventCallbacks_.MethodEntry=callbackMethodEntry;
   error = (*jvmti)->SetEventCallbacks(jvmti, &jvmtiEventCallbacks_, sizeof(jvmtiEventCallbacks));
@@ -80,8 +80,8 @@ JNIEXPORT void JNICALL Java_TestJni_printMsg
   (JNIEnv *vm, jclass clazz)
 {
   jthread* thread_ptr;
-  error = (*jvmti)->GetCurrentThread(jvmti, &thread_ptr);
   jvmtiThreadInfo info_ptr;
+  error = (*jvmti)->GetCurrentThread(jvmti, &thread_ptr);
   
   if (error == JVMTI_ERROR_NONE) {
     printf(" No error getting thread. \n");
