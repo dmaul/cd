@@ -1,0 +1,2 @@
+/Users/jesus.juarez/chroot_/error_/build/CMakeFiles/rebuild_cache.dir
+/Users/jesus.juarez/chroot_/error_/build/CMakeFiles/edit_cache.dir

@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/jesus.juarez/chroot_/error_/shmtool.c
+stdio.h
+-
+sys/types.h
+-
+sys/ipc.h
+-
+sys/shm.h
+-
+
