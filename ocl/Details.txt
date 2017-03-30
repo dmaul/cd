@@ -1,6 +1,7 @@
 
 follow steps in: https://github.com/KhronosGroup/SPIR/tree/spirv-1.0
 
+clone project (give it a name as e.g.: llvm)
 mkdir llvm_build
 cd llvm_build
 cmake ../llvm
@@ -8,4 +9,4 @@ make
 
 to compile and link:
 
-/LLVM/llvm_build/bin/clang -I/Users/jesus.juarez/chroot_/opencl/LLVM/master/include -I/Users/jesus.juarez/Downloads -framework OpenCL -v -o Test TestOpenCL.c
+PARENT_DIR_OF_LLVM_BUILD/llvm_build/bin/clang -I/DIR_WHERE_OPENCL_HEADERS_ARE -framework OpenCL -v -o Test TestOpenCL.c
