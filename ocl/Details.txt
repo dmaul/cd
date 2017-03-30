@@ -1,0 +1,11 @@
+
+follow steps in: https://github.com/KhronosGroup/SPIR/tree/spirv-1.0
+
+mkdir llvm_build
+cd llvm_build
+cmake ../llvm
+make
+
+to compile and link:
+
+/LLVM/llvm_build/bin/clang -I/Users/jesus.juarez/chroot_/opencl/LLVM/master/include -I/Users/jesus.juarez/Downloads -framework OpenCL -v -o Test TestOpenCL.c
