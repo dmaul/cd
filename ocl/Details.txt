@@ -12,4 +12,4 @@ to compile and link:
 PARENT_DIR_OF_LLVM_BUILD/llvm_build/bin/clang -I/DIR_WHERE_OPENCL_HEADERS_ARE -framework OpenCL -v -o Test TestOpenCL.c
 
 
-/Users/jesus.juarez/chroot_/opencl/LLVM/llvm_build/bin/clang -I$PWD/OPENCL -framework OpenCL -v -o helloword hello_world.c
+PARENT_DIR_OF_LLVM_BUILD/llvm_build/bin/clang -I$PWD/OPENCL -framework OpenCL -v -o helloword hello_world.c
