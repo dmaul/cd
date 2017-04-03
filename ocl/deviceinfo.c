@@ -26,7 +26,7 @@ int main(void)
 		return 1;
 	}
 	
-	// get information from platform
+	// get platform profile info
 	if(clGetPlatformInfo(platform_id, CL_PLATFORM_PROFILE, NULL, profile, &profile_size)){
 	    printf("Unable to get platform info 1 \n");
 	    return 1;
@@ -39,8 +39,81 @@ int main(void)
 	    return 1;
 	}
 	
-	printf("%s", profile);
+	printf("PLATFORM PROFILE: %s", profile);
 	printf("\n");
+	
+	profile = NULL;
+
+	// get platform version info
+	if(clGetPlatformInfo(platform_id, CL_PLATFORM_VERSION, NULL, profile, &profile_size)){
+	    printf("Unable to get platform info 1 \n");
+	    return 1;
+	}
+	
+	profile = (char*) malloc(profile_size);
+	
+	if(clGetPlatformInfo(platform_id, CL_PLATFORM_VERSION, profile_size, profile, NULL)){
+	    printf("Unable to get platform info 2 \n");
+	    return 1;
+	}
+	
+	printf("PLATFORM VERSION: %s", profile);
+	printf("\n");
+
+	profile = NULL;
+
+	// get platform name info
+	if(clGetPlatformInfo(platform_id, CL_PLATFORM_NAME, NULL, profile, &profile_size)){
+	    printf("Unable to get platform info 1 \n");
+	    return 1;
+	}
+	
+	profile = (char*) malloc(profile_size);
+	
+	if(clGetPlatformInfo(platform_id, CL_PLATFORM_NAME, profile_size, profile, NULL)){
+	    printf("Unable to get platform info 2 \n");
+	    return 1;
+	}
+	
+	printf("PLATFORM NAME: %s", profile);
+	printf("\n");
+
+	profile = NULL;
+
+	// get platform name info
+	if(clGetPlatformInfo(platform_id, CL_PLATFORM_VENDOR, NULL, profile, &profile_size)){
+	    printf("Unable to get platform info 1 \n");
+	    return 1;
+	}
+	
+	profile = (char*) malloc(profile_size);
+	
+	if(clGetPlatformInfo(platform_id, CL_PLATFORM_VENDOR, profile_size, profile, NULL)){
+	    printf("Unable to get platform info 2 \n");
+	    return 1;
+	}
+	
+	printf("PLATFORM VENDOR: %s", profile);
+	printf("\n");
+
+	profile = NULL;
+
+	// get platform extension info
+	if(clGetPlatformInfo(platform_id, CL_PLATFORM_EXTENSIONS, NULL, profile, &profile_size)){
+	    printf("Unable to get platform info 1 \n");
+	    return 1;
+	}
+	
+	profile = (char*) malloc(profile_size);
+	
+	if(clGetPlatformInfo(platform_id, CL_PLATFORM_EXTENSIONS, profile_size, profile, NULL)){
+	    printf("Unable to get platform info 2 \n");
+	    return 1;
+	}
+	
+	printf("PLATFORM EXTENSIONS: %s", profile);
+	printf("\n");
+
 
 	return 0;
 }
