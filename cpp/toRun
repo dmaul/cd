@@ -1,0 +1,5 @@
+
+MAC:
+gcc -Wall -pedantic -o MainCpp -I$PWD -I$PWD/impl/classes Main.cpp -lstdc++
+
+LINUX:
