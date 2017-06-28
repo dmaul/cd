@@ -1,4 +1,5 @@
 #include "impl/classes/all.hpp"
+#include "impl/c/miscelaneousFunctions.h"
 
 int main() {
 
@@ -7,5 +8,7 @@ int main() {
 
   instance.printMsg();
   posixInstance.mapFileToM();
+  
+  mapFilesToMemory();
  
 }
