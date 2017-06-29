@@ -1,5 +1,5 @@
 
 MAC:
-gcc -Wall -pedantic -o MainCpp -I$PWD -I$PWD/impl/classes Main.cpp -lstdc++
+gcc -Wall -pedantic -o Main -I$PWD impl/c/miscelaneousFunctions.c impl/classes/MainClass.cpp Main.cpp -lstdc++ -v
 
 LINUX:
