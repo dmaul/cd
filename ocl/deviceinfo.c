@@ -42,6 +42,7 @@ int main(void)
 	printf("PLATFORM PROFILE: %s", profile);
 	printf("\n");
 	
+	free(profile);
 	profile = NULL;
 
 	// get platform version info
@@ -60,7 +61,9 @@ int main(void)
 	printf("PLATFORM VERSION: %s", profile);
 	printf("\n");
 
+    free(profile);
 	profile = NULL;
+	
 
 	// get platform name info
 	if(clGetPlatformInfo(platform_id, CL_PLATFORM_NAME, NULL, profile, &profile_size)){
@@ -78,6 +81,7 @@ int main(void)
 	printf("PLATFORM NAME: %s", profile);
 	printf("\n");
 
+    free(profile);
 	profile = NULL;
 
 	// get platform name info
@@ -96,6 +100,7 @@ int main(void)
 	printf("PLATFORM VENDOR: %s", profile);
 	printf("\n");
 
+    free(profile);
 	profile = NULL;
 
 	// get platform extension info
