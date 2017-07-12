@@ -1,2 +1,5 @@
 
 just a simple text
+
+git config user.name xxx
+git config user.email xxx@xxx
