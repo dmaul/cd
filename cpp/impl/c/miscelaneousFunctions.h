@@ -7,6 +7,8 @@
 
 extern void mapFilesToMemory();
 
+void parseBC();
+
 
 #ifdef __cplusplus
   }

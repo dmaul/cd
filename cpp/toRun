@@ -3,3 +3,4 @@ MAC:
 gcc -Wall -pedantic -o Main -I$PWD impl/c/miscelaneousFunctions.c impl/classes/MainClass.cpp Main.cpp -lstdc++ -v
 
 LINUX:
+gcc -Wall -pedantic -o Parser -I$PWD impl/c/miscelaneousFunctions.c BCParser.cpp
